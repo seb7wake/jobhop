@@ -126,3 +126,16 @@ export const sortSchools = (schools: School[]) => {
   }
   return sortedSchools;
 };
+
+export const addAttachment = async (candidateId: number, resume: File) => {
+  const cleanedResume = await cleanResume(resume[0]);
+  const response = await fetch("/api/attachments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ candidateId, resume: cleanedResume }),
+  });
+  const res = await response.json();
+  return res;
+};

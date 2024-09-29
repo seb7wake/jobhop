@@ -5,13 +5,13 @@ import Head from "next/head";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import EducationSection from "@/components/EducationSection";
 import EmploymentSection from "@/components/EmploymentSection";
-import { cleanData, cleanResume } from "@/utils/helpers";
+import { cleanData } from "@/utils/helpers";
 import EventToast from "@/components/EventToast";
 import AdditionalInformation from "@/components/AdditinalInformation";
 import PersonalInformation from "@/components/PersonalInformation";
 import Header from "@/components/Header";
 import { Spinner } from "react-bootstrap";
-
+import { addAttachment } from "@/utils/helpers";
 export default function Home() {
   const {
     register,
@@ -40,7 +40,6 @@ export default function Home() {
     setLoading(false);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleResult = async (res: any, resume: File) => {
     if (res?.id) {
       const attachmentResponse = await addAttachment(res?.id, resume);
@@ -53,19 +52,6 @@ export default function Home() {
     }
     setIsError(true);
     setShowToast(true);
-  };
-
-  const addAttachment = async (candidateId: number, resume: File) => {
-    const cleanedResume = await cleanResume(resume[0]);
-    const response = await fetch("/api/attachments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ candidateId, resume: cleanedResume }),
-    });
-    const res = await response.json();
-    return res;
   };
 
   return (
