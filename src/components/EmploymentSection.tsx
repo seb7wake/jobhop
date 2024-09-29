@@ -135,8 +135,8 @@ const EmploymentSection = ({
       ))}
       <div className="mb-2 mt-2 text-center">
         <Button
-          variant="success"
-          className="py-2 px-4 rounded-pill align-items-center"
+          variant="outline-dark"
+          className="py-2 px-4 rounded-pill align-items-center bg-white text-dark"
           onClick={() =>
             addEmployment({
               companyName: "",
@@ -146,7 +146,7 @@ const EmploymentSection = ({
             })
           }
         >
-          <FaPlus className="me-2" />
+          <FaPlus className="me-2" color="dark" />
           Add employment
         </Button>
       </div>
