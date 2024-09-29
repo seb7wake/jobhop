@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FormInput } from "../types";
+import Head from "next/head";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import EducationSection from "@/components/EducationSection";
 import EmploymentSection from "@/components/EmploymentSection";
@@ -67,6 +68,23 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>JobHop | Greenhouse Application</title>
+        <meta
+          name="description"
+          content="Greenhouse application form for JobHop"
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content="JobHop - Greenhouse Application"
+          key="title"
+        />
+        <meta
+          property="og:description"
+          content="Greenhouse application form for JobHop"
+        />
+      </Head>
       <Header />
       <Container>
         <EventToast
