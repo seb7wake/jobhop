@@ -1,0 +1,13 @@
+.table {
+  margin-top: 20px;
+}
+
+.tableHeader {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.tableHeader th {
+  vertical-align: middle;
+  text-align: center;
+}
