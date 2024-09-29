@@ -40,7 +40,7 @@ const EmploymentSection = ({
           <Form.Group as={Row} className="mb-4">
             <Form.Label column sm={3} className="d-flex align-items-center">
               <FaBuilding className="me-2" />
-              Company name
+              Company
             </Form.Label>
             <Col sm={9}>
               <Form.Control

@@ -18,6 +18,7 @@ export default function Home() {
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm<FormInput>();
   const [showToast, setShowToast] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
@@ -46,6 +47,7 @@ export default function Home() {
       if (!attachmentResponse.error) {
         setIsError(false);
         setShowToast(true);
+        reset();
         return;
       }
     }
