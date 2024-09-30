@@ -36,7 +36,7 @@ const AdditionalInformation = ({
         label="URL (LinkedIn, Github, Portfolio)"
         id="socialLink"
         register={register}
-        placeholder="Social Link"
+        placeholder="Social link"
         pattern={{
           value:
             /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/,

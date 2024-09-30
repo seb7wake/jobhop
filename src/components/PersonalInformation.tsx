@@ -20,8 +20,8 @@ const PersonalInformation = ({
         required={true}
       />
       <TextInputRow
-        label="Last Name*"
-        placeholder="Last Name"
+        label="Last name*"
+        placeholder="Last name"
         id="lastName"
         register={register}
         error={errors.lastName}
